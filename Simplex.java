@@ -25,10 +25,18 @@ public abstract class Simplex
 		}
 	}
 	
-	public Point get(int i)
+	public Point getPoint(int i)
 	{
-	        //gibt den Wert der Koordinate an Stelle i des Punktes aus
-		return p[i];
+	        //gibt den Wert der Koordinate an Stelle i des Punktes aus wenn i ein gültiger Index ist
+		if (p.length < i) 
+		{ 
+		    return p[i];   
+		}
+		
+		else 
+		{
+		    throw new IndexOutOfBoundsException("Es gibt keinen Punkt an diesem Index!");
+		}
 	}
 	
 	public abstract boolean validate();
