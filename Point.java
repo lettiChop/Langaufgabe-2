@@ -36,8 +36,17 @@ public class Point
 	
 	public double get(int i)
 	{
-		//gibt den Wert der Koordinate an Stelle i des Punktes aus
-		return val[i];
+		//gibt den Wert der Koordinate an Stelle i des Punktes aus wenn i ein gültiger Index ist
+		if (val.length < i) 
+		{ 
+		    return val[i];   
+		}
+		
+		else 
+		{
+		    throw new IndexOutOfBoundsException("Es gibt kein Element an diesem Index!");
+		}
+		
 	}
 	
 	public int dim()
