@@ -6,20 +6,20 @@ public abstract class Simplex
 	public Simplex(int d, Point... points)
 	{
 		dim = d;
+		//Feld von Objekten der Klasse Point mit der Länge dim+1 wird initialisiert
+		p = new Point[dim+1];
 		//Dimenion muss mindestens 0 sein, sonst wird eine Exception geworfen
 		if(dim < 0)
 		{
 			throw new IllegalArgumentException("Die Dimension muss groesser als Null sein!");
 		}
 		//alle Eingabewerte müssen ins Feld passen, daher muss dim mindestens genauso groß sein wie die Anzahl der Eingaben
-		if(dim < p.length)
+		if(dim+1 < p.length)
 		{
 			throw new IllegalArgumentException("Die Dimension ist zu klein fuer die Eingaben!");
 		}
-		//Feld von Objekten der Klasse Point mit der Länge dim+1 wird initialisiert
-		p = new Point[dim+1];
 		//Schreiben jeder Eingabe in das zuvor angelegte Feld
-		for(int i = 0; i < dim+1; i++)
+		for(int i = 0; i < points.length; i++)
 		{
 			p[i] = points[i];
 		}
@@ -27,7 +27,7 @@ public abstract class Simplex
 	
 	public Point get(int i)
 	{
-	        //gibt den Wert der Koordinate an Stelle i des Punktes aus
+	    //gibt den Wert der Koordinate an Stelle i des Punktes aus
 		return p[i];
 	}
 	
