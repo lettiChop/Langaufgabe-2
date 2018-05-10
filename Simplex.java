@@ -37,7 +37,7 @@ public abstract class Simplex
 	}
 	
 	
-	//MAIN METHODE ZUM TESTEN
+	//MAIN METHODE NUR ZUM TESTEN
 	/*
 	public static void main(String[] args)
 	{
