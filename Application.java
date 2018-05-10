@@ -19,6 +19,18 @@ public class Application
 		}
 		else
 		{
+			int rx1 = (int) (Math.random() * (1000 - (-1000)) + (-1000));
+			int ry1 = (int) (Math.random() * (1000 - (-1000)) + (-1000));
+			int rx2 = (int) (Math.random() * (1000 - (-1000)) + (-1000));
+			int ry2 = (int) (Math.random() * (1000 - (-1000)) + (-1000));
+			int rx3 = (int) (Math.random() * (1000 - (-1000)) + (-1000));
+			int ry3 = (int) (Math.random() * (1000 - (-1000)) + (-1000));
+			Point rp1 = new Point(2, rx1, ry1);
+			Point rp2 = new Point(2, rx2, ry2);
+			Point rp3 = new Point(2, rx3, ry3);
+			Triangle rt = new Triangle(2, rp1, rp2, rp3);
+			System.out.println("Ist es ein Dreieck? " + rt.validate());
+			System.out.println("Umfang? " + rt.perimeter());
 			
 		}
 	}
