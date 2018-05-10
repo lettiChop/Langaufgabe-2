@@ -28,6 +28,7 @@ public abstract class Simplex
 		{
 			leng += e.distance(p[i], p[i+1]);
 		}
+		leng += e.distance(p[0], p[p.length-1]);
 		return leng;
 	}
 	

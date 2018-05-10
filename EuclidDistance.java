@@ -11,7 +11,7 @@ public class EuclidDistance implements Distance
 			{
 				temp += Math.pow(p2.get(j) - p1.get(j), 2);
 			}
-			leng += Math.sqrt(temp);
+			leng = Math.sqrt(temp);
 		}
 		return leng;
 	}
