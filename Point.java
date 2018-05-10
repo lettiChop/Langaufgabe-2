@@ -25,7 +25,7 @@ public class Point
 			val[i] = values[i];
 		}
 		
-		//AUSGABE ZUM TESTEN
+		//AUSGABE ZUM NUR TESTEN
 		for(double i : val)
 		{
 			System.out.print(i + " ");
@@ -45,7 +45,16 @@ public class Point
 		return dim;
 	}
 	
-	//MAIN METHODE ZUM TESTEN
+	//SHOW METHODE NUR ZUM TESTEN
+	public void show()
+	{
+		for(int i = 0; i < val.length; i++)
+		{
+			System.out.print(get(i) + " ");
+		}
+	}
+	
+	//MAIN METHODE NUR ZUM TESTEN
 	public static void main(String[] args)
 	{
 		Point p = new Point(2, 3, 4);
