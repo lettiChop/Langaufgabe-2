@@ -7,7 +7,7 @@ public abstract class Simplex
 	{
 		dim = d;
 		p = new Point[dim+1];
-		for(int i = 0; i < dim+1; i++)
+		for(int i = 0; i < points.length; i++)
 		{
 			p[i] = points[i];
 		}
@@ -22,16 +22,11 @@ public abstract class Simplex
 	
 	public double perimeter()
 	{
-		double temp = 0;
 		double leng = 0;
-		for(int i = 0; i < dim; i++)
+		EuclidDistance e = new EuclidDistance();
+		for(int i = 0; i < p.length-1; i++)
 		{
-			temp = 0;
-			for(int j = 0; j < p[i].dim; j++)
-			{
-				temp += Math.pow(p[i+1].get(j) - p[i].get(j), 2);
-			}
-			leng += Math.sqrt(temp);
+			leng += e.distance(p[i], p[i+1]);
 		}
 		return leng;
 	}

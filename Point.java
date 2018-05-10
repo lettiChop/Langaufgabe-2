@@ -25,12 +25,13 @@ public class Point
 			val[i] = values[i];
 		}
 		
-		//AUSGABE ZUM NUR TESTEN
-		for(double i : val)
+		//AUSGABE NUR ZUM TESTEN
+		/*for(double i : val)
 		{
 			System.out.print(i + " ");
 		}
 		System.out.println();
+		*/
 	}
 	
 	public double get(int i)
@@ -46,19 +47,20 @@ public class Point
 	}
 	
 	//SHOW METHODE NUR ZUM TESTEN
-	public void show()
+	/*public void show()
 	{
 		for(int i = 0; i < val.length; i++)
 		{
 			System.out.print(get(i) + " ");
 		}
 	}
-	
+	*/
 	//MAIN METHODE NUR ZUM TESTEN
-	public static void main(String[] args)
+	/*public static void main(String[] args)
 	{
 		Point p = new Point(2, 3, 4);
 		System.out.println(p.get(1));
 		System.out.println(p.dim());
 	}
+	*/
 }
