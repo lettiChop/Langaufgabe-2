@@ -1,0 +1,72 @@
+import java.util.*; 
+
+public class ConvexHull 
+
+{
+    
+    public List<Point> simpleConvex(Point[] P) 
+    { 
+        Triangle tri = new Triangle(2,P);
+        List<Point> convexHull = new ArrayList<Point>(); 
+        
+        if(tri.validate()) 
+        {
+          int minPoint = -1, maxPoint = -1; 
+          double minX = Double.MAX_VALUE; 
+          double maxX = Double.MIN_VALUE; 
+          
+          for (int i = 0; i < P.length; i++)
+          {
+              if(tri.get(i).get(i) < minX)
+              {
+                  minX = tri.get(i).get(i);
+                  minPoint = i; 
+              }
+              if (tri.get(i).get(i) > maxX) 
+              {
+                  maxX = tri.get(i).get(i);
+                  maxPoint = i;
+              }
+          }
+          
+          Point A = tri.get(minPoint);
+          Point B = tri.get(maxPoint);
+          
+          List<Point> l = new ArrayList<Point>(); 
+          List<Point> r = new ArrayList<Point>();
+          
+          EuclidDistance min = new EuclidDistance();
+          EuclidDistance max = new EuclidDistance();
+		  
+			   
+              //Abstaende zwischen p und A und p und B berechnen und miteinander vergleichen   
+              //wenn e(A,p) > e(B,p), dann p <--- r 
+              //p <--- l sonst
+          for (int i = 0; i < P.length; i++)
+          {
+              Point p = tri.get(i); 
+              
+              if (min.distance(A,p) > max.distance(B,p)) 
+              {
+                  r.add(p); 
+              }
+              else 
+              {
+                  l.add(p); 
+              }
+              
+              
+          //convexHull zusammensetzen    
+          convexHull.add(A);
+          convexHull.addAll(l); 
+          convexHull.addAll(r); 
+          convexHull.add(B);
+          
+          } 
+          
+        }
+        
+        return convexHull;
+    }
+     
+}
